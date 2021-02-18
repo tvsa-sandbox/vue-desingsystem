@@ -8,11 +8,10 @@ module.exports = nuxifyStorybook({
     // 'PRODUCTION' is used when building the static version of storybook.
 
     // Make whatever fine-grained changes you need
-    config.node = {
-      fs: 'empty',
-      runtimeCompiler: true,
-      // global: true,
-    }
+    // config.node = {
+    //   // fs: 'empty',
+    //   // global: true,
+    // }
     config.module.rules.push({
       test: /\.(woff|woff2|)$/,
       loaders: ['file-loader'],

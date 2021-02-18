@@ -1,32 +1,42 @@
 <template>
-  <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">vue-desingsystem</h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
+  <theme-provider :theme="theme">
+    <wrapper />
+    <div class="container">
+      <div>
+        <Logo />
+        <h1 class="title">vue-desingsystem</h1>
+        <div class="links">
+          <base-link />
+        </div>
       </div>
     </div>
-  </div>
+  </theme-provider>
 </template>
-
 <script>
-export default {}
+import merge from 'lodash.merge'
+import get from 'lodash.get'
+import { ThemeProvider } from 'vue-styled-components'
+import * as whiteLabel from '../lib/themes/whiteLabel'
+import Wrapper from '../components/wrapper'
+import BaseLink from '~/components/BaseLink.vue'
+
+const wl = whiteLabel
+
+const modes = ['light', 'dark']
+
+const getThemeMode = (mode, btheme) =>
+  merge({}, btheme, {
+    colors: get(btheme.colors.modes, mode, btheme.colors),
+  })
+const theme = getThemeMode(modes[1], wl)
+export default {
+  components: {
+    'base-link': BaseLink,
+    'theme-provider': ThemeProvider,
+    wrapper: Wrapper,
+  },
+  data: () => ({ theme }),
+}
 </script>
 
 <style>
@@ -47,14 +57,6 @@ export default {}
   font-size: 100px;
   color: #35495e;
   letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
 }
 
 .links {

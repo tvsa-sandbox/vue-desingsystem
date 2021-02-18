@@ -98,14 +98,14 @@ export const globalTypes = {
 }
 const withThemeProvider = (story, context) => {
   const theme = THEMES[context.globals.theme]
-  console.log('tema', context.globals.theme)
+  console.log('tema', theme)
   return {
     components: { story, 'theme-provider': ThemeProvider },
     // props: {
     //   ...context,
     // },
     data: () => ({ theme: theme }),
-    template: '<theme-provider :theme="theme"><story/> </theme-provider>',
+    template: '<theme-provider :theme="theme"><story /> </theme-provider>',
   }
 }
 

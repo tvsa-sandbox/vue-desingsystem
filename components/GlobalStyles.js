@@ -1,6 +1,5 @@
 import { injectGlobal } from 'vue-styled-components'
-
-injectGlobal`
+export const GlobalStyles = injectGlobal`
 	html,
     body,
     div,
