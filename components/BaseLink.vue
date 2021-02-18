@@ -20,7 +20,7 @@ export default {
   props: {
     text: {
       type: String,
-      default: 'Button',
+      default: 'Click me!',
     },
     color: {
       type: String,
