@@ -16,7 +16,12 @@
     "@nuxtjs/axios": "^5.12.5",
     "@nuxtjs/pwa": "^3.3.5",
     "core-js": "^3.8.3",
-    "nuxt": "^2.14.12"
+    "lodash": "4.17.15",
+    "lodash.get": "4.4.2",
+    "lodash.merge": "4.6.2",
+    "nuxt": "^2.14.12",
+    "vue-styled-components": "^1.6.0"
+
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^5.0.0",
