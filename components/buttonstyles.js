@@ -14,3 +14,4 @@ export const StyledButton = styled('button', buttonProps)`
   letter-spacing: 1px;
   cursor: pointer;
 `
+export default {}

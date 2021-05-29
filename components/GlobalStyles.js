@@ -194,3 +194,4 @@ export const GlobalStyles = injectGlobal`
         user-select: text;
     }
 `
+export default {}

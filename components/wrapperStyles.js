@@ -11,3 +11,4 @@ export const StyledWrapper = styled('body', wrapperProps)`
   ${GlobalStyles}
   ${bgcolor}
 `
+export default {}
